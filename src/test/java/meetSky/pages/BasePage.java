@@ -9,7 +9,7 @@ public class BasePage {
         PageFactory.initElements(Driver.getDriver(),this);
 
     }
-
+//next step is to find the elements
 
 
 }
