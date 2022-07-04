@@ -1,5 +1,8 @@
 package meetSky.runners;
 
+
+
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -7,7 +10,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {
-               // "pretty",
+                // "pretty",
                 "html:target/cucumber-reports.html",
                 "json:target/cucumber.json",
                 "rerun:target/rerun.txt",
@@ -17,9 +20,13 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/meetSky/step_definitions",
         dryRun = false,
-        tags = "",
+        tags = "@mesk-26",
         publish = false
 
 )
 public class CukesRunner {
 }
+
+
+
+
