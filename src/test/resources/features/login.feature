@@ -73,7 +73,7 @@ Feature: As a user, I should be able to login
     And Click on the Forgot password? link
     Then Verify that user can see the Reset Password button
 
-  @wip
+
   Scenario: 6-User can see valid placeholders on Username and Password fields
     When Navigate to login page
     And Verify that user can see valid placeholders on Username inputbox
