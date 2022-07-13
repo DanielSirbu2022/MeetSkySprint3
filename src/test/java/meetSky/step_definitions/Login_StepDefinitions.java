@@ -57,11 +57,17 @@ public class Login_StepDefinitions {
 
     @Then("Verify that user can not login and see the notice message:Please fill out this field")
     public void verify_that_user_can_not_login_and_see_the_notice_message_please_fill_out_this_field() {
-        BrowserUtils.sleep(4);
-        String message = Driver.getDriver().findElement(By.name("password")).getAttribute("validationMessage");
-        Assert.assertTrue(message.equalsIgnoreCase("Please fill in this field."));
-    }
+        String actualRequiredFieldErrorMessagePsw = loginPage.passwordInputbox.getAttribute("validationMessage");
+        String actualRequiredFieldErrorMessageUsr = loginPage.usernameInputbox.getAttribute("validationMessage");
 
+        if (actualRequiredFieldErrorMessageUsr.isEmpty()) {
+            Assert.assertEquals("Please fill out this field.", actualRequiredFieldErrorMessagePsw);
+        } else {
+            Assert.assertEquals("Please fill out this field.", actualRequiredFieldErrorMessageUsr);
+        }
+
+
+    }
 
     @Then("check if password appeare in the form of dots")
     public void checkIfPasswordAppeareInTheFormOfDots() {
